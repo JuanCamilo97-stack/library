@@ -30,6 +30,16 @@
 
 ```bash
 $ yarn install
+$ npm install
+```
+
+```docker
+
+## Running docker-compose
+$ docker-compose exec postgres bash
+$ docker-compose up -d postgres 
+
+
 ```
 
 ## Running the app
