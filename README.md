@@ -49,7 +49,7 @@ $ yarn install
 $ npm install
 
 crear docker-compose.yml= New-Item -ItemType File -Name "docker-compose.yml"
-crear carpeta db con init.sql 
+# crear carpeta db con init.sql 
 
 # 1) New-Item -ItemType Directory -Name "db"
 # 2) New-Item -ItemType File -Path "db\init.sql"
