@@ -10,7 +10,7 @@ import { BooksModule } from './books/books.module';
       host: 'localhost',
       port: 5432,
       username: 'juandevlop',
-      password: 'postgres1',
+      password: 'secret1234',
       database: 'my_db',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: false,

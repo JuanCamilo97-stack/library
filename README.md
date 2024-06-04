@@ -24,22 +24,68 @@
 
 ## Description
 
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 [Github-author-JuanCamilo97-stack] (https://github.com/JuanCamilo97-stack/library.git) feat/develop
 
 ## Installation
+empezar con el proyecto 
+primer comando  
+npm i -g  @nestjs/cli
+verificar nest --version
+
+crear proyecto
+nes new nombre de proyecto
+
+una vez creado solo dejamos en el src el app.module.ts y el main.ts
+
+"nest g mo users" para crear el modulo
+"nest g s users/service/users -- flat " para crear el service
+"nest g co users/controllers/users -- flat
 
 ```bash
 $ yarn install
 $ npm install
+
+crear docker-compose.yml= New-Item -ItemType File -Name "docker-compose.yml"
+crear carpeta db con init.sql 
+
+# 1) New-Item -ItemType Directory -Name "db"
+# 2) New-Item -ItemType File -Path "db\init.sql"
+
+Una vez conectado el docker debes subir el servcio con el comando 
+docker-compose up (en caso tal de haber varios servicios y solo querer definir uno solo pones el nombre que le pusiste )
+
+
+demas dependencias a instalar 
+npm install --save @nestjs/typeorm typeorm pg (el pg se debe a instalar el postgres)
+
 ```
 
 ```docker
 
 ## Running docker-compose
 $ docker-compose exec postgres bash
-$ docker-compose up -d postgres 
+$ docker-compose up  name del proyecto(-d postgres )
+para ingresar al docker desde la terminal 
+docker-compose exec postgres_sql bas ---  despues de exec el nombre del archivo
+una vez hecho esto entramos a la base de datos de docker para crear la tabla
+con ls se ve la estructura 
+luego agregamos el comando ( psql -h localhost -d (nombre de la base de datos (my_db) -U (nombre usuario(juandevlop) ))) psql -h localhost -d my_db -U juandevlop, con esto entras a la base de datos si te pide algo mas es la contraseña
+asi ya estas en postgres
+lueog debes instalar el orm
+
+recuerde agregar las migraciones en el package.json
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "migrations:generate": "npm run typeorm -- migration:generate -n",
+    "migrations:run": "npm run typeorm -- migration:run",
+    "migrations:show": "npm run typeorm -- migration:show"
+    
+
+    para correr la migracion 
+    npm run migrations:generate --init
+
 
 
 ```
